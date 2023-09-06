@@ -95,7 +95,7 @@ int main ()
         if (numero2 == 2) {
             // Conversión a binario
             while (numero1 > 0) {
-                printf(ANSI_COLOR_GREEN "%d"ANSI_COLOR_RESET, numero1 % 2);
+                printf(ANSI_COLOR_GREEN"%d"ANSI_COLOR_RESET, numero1 % 2);
                 numero1 = numero1 / 2;
             }
         } else  if (numero2 == 10) {
@@ -106,7 +106,7 @@ int main ()
                 decimal = decimal + resto * pow(2, i); // Utiliza pow() en lugar de (2 ^ i)
                 i++;
             }
-            printf(ANSI_COLOR_GREEN "%d"ANSI_COLOR_RESET, decimal);
+            printf(ANSI_COLOR_GREEN"%d"ANSI_COLOR_RESET, decimal);
         } else
         {
             printf(ANSI_COLOR_RED"Base no válida. Intente con 2 o 10."ANSI_COLOR_RESET);
@@ -122,7 +122,7 @@ int main ()
             while (j1 < 4)
         {
                 //Se imprime verde printf("%.1f\t", j1);
-                printf(ANSI_COLOR_GREEN  "%.1f\t" ANSI_COLOR_RESET, j1);
+                printf(ANSI_COLOR_GREEN "%.1f\t" ANSI_COLOR_RESET, j1);
                 j1++;
             }
                 printf("\n");
