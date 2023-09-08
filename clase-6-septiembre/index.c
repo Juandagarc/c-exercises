@@ -196,6 +196,41 @@ int main ()
                 printf("\n");
             }
         break;
+        // case 9:
+        //     printf(ANSI_COLOR_YELLOW "Ingrese el tamaño del rectangulo: " ANSI_COLOR_RESET);
+        //     scanf("%d", &n);
+        //     printf("\n");
+        //     m = 1;
+        //     while ((l < (n-1)))
+        //         {
+        //             printf(ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET, k + 1);
+        //             l++;
+        //             k++;
+        //         }
+        //         k = m;
+        //         l = 0;
+        //         printf(ANSI_COLOR_GREEN "1\n" ANSI_COLOR_RESET);
+        //         m++;
+        //     while(m <= n/2)
+        //     {
+        //         while (l < n)
+        //         {
+        //             if (l == 0 || l == n - 1)
+        //             {
+        //                 printf(ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET, k + 1);
+        //             }
+        //             else
+        //             {
+        //                 printf(" ");
+        //             }
+        //             l++;
+        //         }
+        //         l = 0;
+        //         printf("\n");
+        //         m++;
+        //     }
+            
+        //     break;
     }
 
     return 0;
