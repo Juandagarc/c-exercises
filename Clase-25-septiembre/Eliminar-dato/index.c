@@ -5,7 +5,7 @@
 int main () {
 
     //-----------------Enunciado-----------------
-    // 3. Permite borrar datos del vetor
+    // 3. Permite borrar datos del vector
 
     //-----------------Codigo-----------------
 
