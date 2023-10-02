@@ -17,7 +17,7 @@
 
 int main () {
 
-    srandom(time(NULL));
+    srand(time(NULL));
     //Palabras del ahorcado
 
     char palabras[10][100] = {"casa", "perro", "gato", "computador", "celular", "cama", "mesa", "silla", "teclado", "mouse"};
@@ -41,7 +41,7 @@ int main () {
     printf( CYAN "BINEVENIDO A AHORCADO!\n\n" RESET);
 
     //Se define la palabra a adivinar
-    int numeroAleatorio = random() % 10;
+    int numeroAleatorio = rand() % 10;
     char palabra[100];
     strcpy(palabra, palabras[numeroAleatorio]);
     int longitudPalabra = strlen(palabra), i = 0;
