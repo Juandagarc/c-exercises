@@ -31,19 +31,6 @@
                                 {"■","□","■","□","■"}};
 
         while( n != 0) {
-            // system("clear");
-            // Se imprime la matriz caracter por caracter
-            // for (i = 0; i < 8; i++) {
-            //     for (j = 0; j < 8; j++) {
-            //         //Se imprime rojo si es un numero en x y y
-            //         if ((i == x) && (j == y)) {
-            //             printf(RED"%s\t"RESET, matriz[i][j]);
-            //         } else {
-            //             printf("%s\t", matriz[i][j]);
-            //         }
-            //     }
-            //     printf("\n");
-            // }
             // se tira un dado aleatorio del 1 al 8
             int dadox = rand() % 8;
             int dadoy = rand() % 8;
