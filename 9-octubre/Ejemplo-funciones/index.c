@@ -37,12 +37,16 @@ int LongitudCadena ( char cadena[] ) {
 int main () {
     int a = 5, b = 7;
     char cadena[] = "Hola mundo";
+    char nombre[] = "Juan David";
+    char apellido[] = "García Arce";
     printf("La suma de %d y %d es %d\n", a, b, suma(a, b));
     printf("La multiplicacion de %d y %d es %d\n", a, b, multiplicacion(a, b));
     printf("La suma de %d y %d es %da\n", suma(a, b), multiplicacion(a, b), suma(suma(a, b), multiplicacion(a, b)));
     printf("El mayor entre %d y %d es %d\n", a, b, mayor(a, b));
     printf("La potencia de %d elevado a %d es %d\n", a, b, potencia(a, b));
     printf("La longitud de la cadena \"%s\" es %d\n", cadena, LongitudCadena(cadena));
+    printf("La longitud de la cadena \"%s\" es %d\n", nombre, LongitudCadena(nombre));
+    printf("La longitud de la cadena \"%s\" es %d\n", apellido, LongitudCadena(apellido));
     return 0;
 }
 
