@@ -1,6 +1,9 @@
 //Presentado por: Juan David García Arce
 
 #include <stdio.h>
+//Para radom
+#include <stdlib.h>
+#include <time.h>
 
 int suma ( int a, int b ) {
     return a + b;
@@ -40,11 +43,36 @@ void Intercambio ( int *a, int *b ) {
     *b = aux;
 }
 
+void LlenarMatriz ( int matriz[5][5] ) {
+    int i, j;
+    for ( i = 0; i < 5; i++ ) {
+        for ( j = 0; j < 5; j++ ) {
+            matriz[i][j] = rand() % 100;
+        }
+    }
+}
+
+void ImprimirMatriz ( int matriz[5][5] ) {
+    int i, j;
+    for ( i = 0; i < 5; i++ ) {
+        for ( j = 0; j < 5; j++ ) {
+            printf("%d\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
 int main () {
+    srand(time(NULL));
     int a = 5, b = 7;
     char cadena[] = "Hola mundo";
     char nombre[] = "Juan David";
     char apellido[] = "García Arce";
+    int matriz[5][5];
     printf("La suma de %d y %d es %d\n", a, b, suma(a, b));
     printf("La multiplicacion de %d y %d es %d\n", a, b, multiplicacion(a, b));
     printf("La suma de %d y %d es %da\n", suma(a, b), multiplicacion(a, b), suma(suma(a, b), multiplicacion(a, b)));
@@ -56,6 +84,9 @@ int main () {
     printf("El valor de a es %d y el valor de b es %d\n", a, b);
     Intercambio(&a, &b);
     printf("El valor de a es %d y el valor de b es %d\n", a, b);
+    LlenarMatriz(matriz);
+    ImprimirMatriz(matriz);
+
     return 0;
 }
 
