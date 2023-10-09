@@ -21,10 +21,10 @@
         srand(time(NULL));
 
         int x = 3, y = 3, i, j, n = 1;
-        int contador = 1;
+        int contador = 2;
         int intentos = 0;
         //El caballo es la c en el taablero
-        char matriz[8][8][100] = {{"■","□","■","□","■"},
+        char matriz[8][8][100] = {{"1","□","■","□","■"},
                                 {"□","■","□","■","□"},
                                 {"■","□","■","□","■"},
                                 {"□","■","□","■","□"},
@@ -61,6 +61,19 @@
                 // printf("El caballo no se puede mover a esa posicion\n");
                 x = 0;
                 y = 0;
+                //Se reinicia la matriz
+                for (i = 0; i < 8; i++) {
+                    for (j = 0; j < 8; j++) {
+                        if (strcmp(matriz[i][j], "■") == 0) {
+                            sprintf(matriz[i][j], "□");
+                        } else if (strcmp(matriz[i][j], "□") == 0) {
+                            sprintf(matriz[i][j], "■");
+                        }
+                    }
+                }
+                //1 es en x y 0 es en y
+                sprintf(matriz[x][y], "%d", contador);
+                contador = 2;
             }
             // printf("x: %d, y: %d\n Ingrese 1 para tirar el dado:\n", x, y);
             //se cuentan cuantos "□" y "■" quedan
