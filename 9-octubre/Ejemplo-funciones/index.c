@@ -34,6 +34,12 @@ int LongitudCadena ( char cadena[] ) {
     return i;
 }
 
+void Intercambio ( int *a, int *b ) {
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
 int main () {
     int a = 5, b = 7;
     char cadena[] = "Hola mundo";
@@ -47,6 +53,9 @@ int main () {
     printf("La longitud de la cadena \"%s\" es %d\n", cadena, LongitudCadena(cadena));
     printf("La longitud de la cadena \"%s\" es %d\n", nombre, LongitudCadena(nombre));
     printf("La longitud de la cadena \"%s\" es %d\n", apellido, LongitudCadena(apellido));
+    printf("El valor de a es %d y el valor de b es %d\n", a, b);
+    Intercambio(&a, &b);
+    printf("El valor de a es %d y el valor de b es %d\n", a, b);
     return 0;
 }
 
