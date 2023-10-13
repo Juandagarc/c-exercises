@@ -54,16 +54,37 @@ int main () {
     scanf("%d", &n);
 
     int vector[n];
-    llenarVector(vector, n);
 
-    float media = mediaAritmetica(vector, n);
-    printf("La media aritmetica es: %.2f\n", media);
+    int opcion;
+    do {
+        printf("1. Llenar vector\n");
+        printf("2. Media aritmetica\n");
+        printf("3. Desviacion respecto a la media\n");
+        printf("4. Desviacion tipica\n");
+        printf("5. Salir\n");
+        printf("Ingrese una opcion: ");
+        scanf("%d", &opcion);
 
-    float desviacionMedia = desviacionRespectoMedia(vector, n, media);
-    printf("La desviacion respecto a la media es: %.2f\n", desviacionMedia);
-
-    float desviacion = desviacionTipica(vector, n, media);
-    printf("La desviacion tipica es: %.2f\n", desviacion);
-
+        switch (opcion) {
+            case 1:
+                llenarVector(vector, n);
+                break;
+            case 2:
+                printf("La media aritmetica es: %.2f\n", mediaAritmetica(vector, n));
+                break;
+            case 3:
+                printf("La desviacion respecto a la media es: %.2f\n", desviacionRespectoMedia(vector, n, mediaAritmetica(vector, n)));
+                break;
+            case 4:
+                printf("La desviacion tipica es: %.2f\n", desviacionTipica(vector, n, mediaAritmetica(vector, n)));
+                break;
+            case 5:
+                printf("Adios\n");
+                break;
+            default:
+                printf("Opcion invalida\n");
+                break;
+        }
+    } while (opcion != 5);
     return 0;
 }
