@@ -155,14 +155,6 @@ void listarProductosTodos(struct facturas facturas[], int itemCount) {
     }
 }
 
-//Actualiza el total bruto, descuento, IVA y total de un producto
-void actualizarProductos(struct productos productos) {
-    productos.totalBruto = calcularTotalBruto(productos);
-    productos.descuento = productos.totalBruto * productos.porcentajeDescuento;
-    productos.IVA = calcularIVA(productos.totalBruto, productos.descuento);
-    productos.total = calcularTotal(productos.totalBruto, productos.descuento, productos.IVA);
-}
-
 //Se imprimen facturas con color verde, clientes con color BLUE y productos con color gris
 void imprimirFactura(struct facturas facturas) {
     printf(GREEN "Factura: %d\n", facturas.id);
@@ -187,6 +179,17 @@ void imprimirFactura(struct facturas facturas) {
     printf("IVA: %f\n", facturas.clientes[0].productos[0].IVA);
     printf("Total: %f\n", facturas.clientes[0].productos[0].total);
     printf(RESET);
+}
+
+//Que se actualizan los totales de la factura
+void actualizarTotales(struct facturas facturas[], int itemCount) {
+    for (int i = 0; i < itemCount; i++) {
+        facturas[i].clientes[0].productos[0].totalBruto = calcularTotalBruto(facturas[i].clientes[0].productos[0]);
+        facturas[i].clientes[0].productos[0].porcentajeDescuento = 0.07;
+        facturas[i].clientes[0].productos[0].descuento = facturas[i].clientes[0].productos[0].totalBruto * facturas[i].clientes[0].productos[0].porcentajeDescuento;
+        facturas[i].clientes[0].productos[0].IVA = calcularIVA(facturas[i].clientes[0].productos[0].totalBruto, facturas[i].clientes[0].productos[0].descuento);
+        facturas[i].clientes[0].productos[0].total = calcularTotal(facturas[i].clientes[0].productos[0].totalBruto, facturas[i].clientes[0].productos[0].descuento, facturas[i].clientes[0].productos[0].IVA);
+    }
 }
 
 
@@ -271,10 +274,8 @@ int main () {
         switch (opcion) {
             case 1:
                 ingresarProducto(facturas, itemCount);
-                //Se actualizan los productos
-                for (int i = 0; i < itemCount; i++) {
-                    actualizarProductos(facturas[i].clientes[0].productos[0]);
-                }
+                //Se actualizan los totales de la factura
+                actualizarTotales(facturas, itemCount);
                 break;
             case 2:
                 listarProductosTodos(facturas, itemCount);
