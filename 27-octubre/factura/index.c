@@ -52,9 +52,7 @@ float calcularTotalBruto(struct productos productos) {
     float totalBruto = 0;
     for (int i = 0; i < 5; i++) {
         totalBruto += productos.producto[i].importe;
-        printf("%f\n", productos.producto[i].importe);
     }
-    printf("Total bruto: %f\n", totalBruto);
     return totalBruto;
 }
 
@@ -259,10 +257,6 @@ int main () {
     facturas[1].clientes[0].productos[0].descuento = facturas[1].clientes[0].productos[0].totalBruto * facturas[1].clientes[0].productos[0].porcentajeDescuento;
     facturas[1].clientes[0].productos[0].IVA = calcularIVA(facturas[1].clientes[0].productos[0].totalBruto, facturas[1].clientes[0].productos[0].descuento);
     facturas[1].clientes[0].productos[0].total = calcularTotal(facturas[1].clientes[0].productos[0].totalBruto, facturas[1].clientes[0].productos[0].descuento, facturas[1].clientes[0].productos[0].IVA);
-
-
-    imprimirFactura(facturas[0]);
-    imprimirFactura(facturas[1]);
 
     int itemCount = 2;
     int opcion = 0;
